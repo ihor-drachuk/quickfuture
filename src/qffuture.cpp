@@ -144,8 +144,6 @@ int Future::progressMaximum(const QVariant &future)
 
 void Future::onFinished(const QVariant &future, QJSValue func, QJSValue owner)
 {
-    Q_UNUSED(owner);
-
     if (!m_wrappers.contains(typeId(future))) {
         qWarning() << QString("Future: Can not handle input data type: %1").arg(QMetaType::typeName(future.type()));
         return;
