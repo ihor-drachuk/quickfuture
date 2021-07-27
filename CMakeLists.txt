@@ -11,6 +11,5 @@ FILE(GLOB_RECURSE SOURCES src/*.cpp src/*.h)
 add_library(quickfuture STATIC ${SOURCES})
 target_compile_definitions(quickfuture PUBLIC QUICK_FUTURE_BUILD_PLUGIN)
 
-target_compile_definitions(quickfuture PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(quickfuture PUBLIC Qt5::Core Qt5::Quick)
 target_include_directories(quickfuture PUBLIC src)
